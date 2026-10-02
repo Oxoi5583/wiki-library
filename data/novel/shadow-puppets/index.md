@@ -16,8 +16,7 @@ features: "Shadow Series 第三部，結合全球政治與 Bean 家族線."
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The Shadow Series"
     url: https://us.macmillan.com/series/TheShadowSeries

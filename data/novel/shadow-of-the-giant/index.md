@@ -16,8 +16,7 @@ features: "Shadow Series 第四部，收束大部分地球霸權戰爭."
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The Shadow Series"
     url: https://us.macmillan.com/series/TheShadowSeries

@@ -18,8 +18,7 @@ features: "經典 first-contact 長篇，以外星生物學、人口循環與帝
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Moties 系列書目"
     url: https://www.orderofbooks.com/authors/larry-niven/

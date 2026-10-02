@@ -18,8 +18,7 @@ features: "Second Formic War 第二部；截至目前官方系列頁只列已出
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The Second Formic War"
     url: https://us.macmillan.com/series/thesecondformicwar

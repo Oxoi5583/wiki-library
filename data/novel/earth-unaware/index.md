@@ -18,8 +18,7 @@ features: "First Formic War 第一部，描寫《戰爭遊戲》約百年前的�
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The First Formic War"
     url: https://us.macmillan.com/series/thefirstformicwar

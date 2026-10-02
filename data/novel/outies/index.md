@@ -16,8 +16,7 @@ features: "由 Jennifer R. Pournelle 撰寫的官方授權續作，延續 Niven�
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Moties 系列書目"
     url: https://www.orderofbooks.com/authors/larry-niven/

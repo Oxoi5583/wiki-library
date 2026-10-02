@@ -16,8 +16,7 @@ features: "直接續作，更集中處理 Ringworld 本身的工程問題，也�
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Ringworld series 書目"
     url: https://en.wikipedia.org/wiki/Ringworld_series

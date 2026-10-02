@@ -16,8 +16,7 @@ features: "Ender Saga 第三部，將跨物種倫理、宗教與物理學問題�
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The Ender Saga"
     url: https://us.macmillan.com/series/theendersaga

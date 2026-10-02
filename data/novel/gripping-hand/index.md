@@ -18,8 +18,7 @@ features: "《The Mote in God's Eye》的直接續作，英國亦以《The Moat 
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Moties 系列書目"
     url: https://www.orderofbooks.com/authors/larry-niven/

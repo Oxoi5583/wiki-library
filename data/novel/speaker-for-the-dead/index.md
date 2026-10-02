@@ -16,8 +16,7 @@ features: "把前作軍事科幻轉向人類學、宗教與跨物種溝通，並
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The Ender Saga"
     url: https://us.macmillan.com/series/theendersaga

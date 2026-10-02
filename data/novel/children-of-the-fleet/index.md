@@ -16,8 +16,7 @@ features: "Enderverse 中 Fleet School 支線目前的長篇作品."
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The Ender Saga"
     url: https://us.macmillan.com/series/theendersaga

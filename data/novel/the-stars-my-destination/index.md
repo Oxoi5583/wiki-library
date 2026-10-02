@@ -16,8 +16,7 @@ features: "以《基督山恩仇記》的復仇骨架結合瞬間移動、企業
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Library of America《The Stars My Destination》收錄資料"
     url: https://www.loa.org/books/345-american-science-fiction-nine-classic-novels-of-the-1950s-boxed-set/

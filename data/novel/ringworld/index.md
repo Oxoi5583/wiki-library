@@ -16,8 +16,7 @@ features: "Known Space 最著名的作品之一，以巨型人工結構、軌道
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Ringworld series 書目"
     url: https://en.wikipedia.org/wiki/Ringworld_series

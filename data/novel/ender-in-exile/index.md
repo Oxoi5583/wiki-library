@@ -16,8 +16,7 @@ features: "故事時間位於《戰爭遊戲》與《亡靈代言人》之間，
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The Ender Saga"
     url: https://us.macmillan.com/series/theendersaga

@@ -18,8 +18,7 @@ features: "First Formic War 第三部，收束第一次入侵."
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The First Formic War"
     url: https://us.macmillan.com/series/thefirstformicwar

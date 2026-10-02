@@ -16,8 +16,7 @@ features: "Shadow Series 第二部，主軸由外星戰爭轉向地球地緣政�
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The Shadow Series"
     url: https://us.macmillan.com/series/TheShadowSeries

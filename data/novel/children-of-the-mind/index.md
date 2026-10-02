@@ -16,8 +16,7 @@ features: "Ender Saga 第四部，直接承接《Xenocide》並收束原本的 L
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The Ender Saga"
     url: https://us.macmillan.com/series/theendersaga

@@ -16,8 +16,7 @@ features: "把太空歌劇、神話結構、階級政治與六○年代文化放
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "《Nova》作品資料"
     url: https://en.wikipedia.org/wiki/Nova_(novel)

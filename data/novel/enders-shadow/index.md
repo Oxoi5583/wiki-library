@@ -16,8 +16,7 @@ features: "與《戰爭遊戲》平行發生，並開啟 Shadow Series 地球政
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The Shadow Series"
     url: https://us.macmillan.com/series/TheShadowSeries

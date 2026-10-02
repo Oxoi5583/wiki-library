@@ -16,8 +16,7 @@ features: "Larry Niven 親自完成的 Ringworld 核心四部曲最終部。"
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Ringworld series 書目"
     url: https://en.wikipedia.org/wiki/Ringworld_series

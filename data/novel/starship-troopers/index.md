@@ -16,8 +16,7 @@ features: "1959 年軍事科幻經典，以動力裝甲步兵、空降作戰與�
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "誠品《Starship Troopers》"
     url: https://www.eslite.com/product/1002149602652280

@@ -16,8 +16,7 @@ features: "Enderverse 起點，以兒童軍事教育、戰術天才與「遊戲�
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The Ender Saga"
     url: https://us.macmillan.com/series/theendersaga

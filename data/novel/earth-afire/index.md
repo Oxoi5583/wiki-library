@@ -18,8 +18,7 @@ features: "First Formic War 第二部."
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The First Formic War"
     url: https://us.macmillan.com/series/thefirstformicwar

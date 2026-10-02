@@ -16,8 +16,7 @@ features: "Macmillan 標為 Ender Saga 第 6 卷，同時也是 Ender 主線與 
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The Ender Saga"
     url: https://us.macmillan.com/series/theendersaga

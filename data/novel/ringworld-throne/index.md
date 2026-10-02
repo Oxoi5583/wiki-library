@@ -16,8 +16,7 @@ features: "系列第三部，將重點由探險進一步轉向環世界內部的
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Ringworld series 書目"
     url: https://en.wikipedia.org/wiki/Ringworld_series

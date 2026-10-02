@@ -16,8 +16,7 @@ features: "《永世之戰》的直接續作，再度以相對論旅行與文明
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "誠品《永世之戰》"
     url: https://www.eslite.com/product/1001123032566925

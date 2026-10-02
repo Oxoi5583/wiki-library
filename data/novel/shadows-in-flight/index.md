@@ -16,8 +16,7 @@ features: "Shadow Series 第五部，把地球政治線重新帶回太空與 For
 status: curious
 added: 2026-10-02
 cover: ""
-editions:
-[]
+editions: []
 sources:
   - label: "Macmillan The Shadow Series"
     url: https://us.macmillan.com/series/TheShadowSeries
