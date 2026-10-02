@@ -43,3 +43,22 @@ sakka-sanbusaku:
           label: 第三編・前編
         - work: hyakujado
           label: 第三編・後編
+
+shell-bullet:
+  title: Schell Bullet
+  original_title: シェルブリット
+  aliases: [SHELL BULLET]
+  description: 幾原邦彥與永野護共同創作的科幻視覺小說系列，以進化為巨大宇宙船的「Gene Liner」人類種為核心。
+  sources:
+    - label: KADOKAWA《シェルブリット I ADEN ARABIE》
+      url: https://www.kadokawa.co.jp/product/199999853091/
+    - label: KADOKAWA《シェルブリット II ABRAXAS》
+      url: https://www.kadokawa.co.jp/product/199999853129/
+  orders:
+    - id: release
+      title: 出版順序
+      items:
+        - work: shell-bullet-1-aden-arabie
+          label: I
+        - work: shell-bullet-2-abraxas
+          label: II
