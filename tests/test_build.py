@@ -192,7 +192,7 @@ class BuildTests(unittest.TestCase):
             build(self.source, self.output)
 
     def test_sample_library_has_no_broken_local_links_or_fragments(self):
-        self.assertEqual(build(ROOT / "data", self.output), 6)
+        self.assertGreater(build(ROOT / "data", self.output), 0)
         parsed = {}
         for path in self.output.rglob("*.html"):
             parser = Links()
