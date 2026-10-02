@@ -15,6 +15,7 @@ media:
   music: 音樂
   play: 戲劇
   poetry: 詩歌
+  software: 軟體
   other: 其他
 
 # 作品分類：使用通行的文類、作品類型或學術領域。
@@ -48,3 +49,5 @@ categories:
   humanities: 人文學術
   natural-science: 自然科學
   philosophy: 哲學著作
+  design: 設計
+  graphics-software: 圖像設計軟體
