@@ -20,7 +20,7 @@ added: 2026-10-02
 cover: ""
 editions: []
 sources:
-  - label: AnimEigo《Metal Skin Panic: MADOX-01》
+  - label: "AnimEigo《Metal Skin Panic: MADOX-01》"
     url: https://wiki.animeigo.com/wiki/doku.php/madox:start
   - label: Prime Video《Metal Skin Panic Madox-01》
     url: https://www.primevideo.com/-/zh_TW/detail/0H8GM1PZS2E8ROPNHJP2YL2OR3

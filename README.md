@@ -151,7 +151,7 @@ related: []
 | `sources` | `{label, url}` 清單；網址需要完整 HTTP(S) URL |
 | `related` | 其他館藏的 `id` 清單，會檢查是否存在 |
 
-每個 `editions` 項目只有 `title` 必填；其他欄位為 `language`、`format`、`translators`（字串清單）、`publisher`、`year`、`isbn`（字串）、`url` 與 `notes`。**版本年份與原作年份分開保存**。同名作品、不同年份的重拍版本，可在 `title` 或 `aliases` 補充識別資訊。
+> **YAML 注意：** 單行字串只要包含 ASCII `: `，請把整個值用引號包起來。例如應寫成 `label: "Metal Skin Panic: MADOX-01"`。建置器會對這一種常見漏引號錯誤做保守的記憶體內容錯重試，但不會修改來源檔，也不會放寬重複 key、錯誤型別、壞網址等驗證。\n\n每個 `editions` 項目只有 `title` 必填；其他欄位為 `language`、`format`、`translators`（字串清單）、`publisher`、`year`、`isbn`（字串）、`url` 與 `notes`。**版本年份與原作年份分開保存**。同名作品、不同年份的重拍版本，可在 `title` 或 `aliases` 補充識別資訊。
 
 舊欄位 `interest`（收藏原因）與 `featured` 已停用，不會顯示，也不會自動把主觀收藏原因當成客觀作品特色。新增或更新條目請使用 `features`。
 

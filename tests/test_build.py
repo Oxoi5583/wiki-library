@@ -112,6 +112,30 @@ class BuildTests(unittest.TestCase):
             build(self.source, self.output)
         self.assertEqual((self.output / "index.html").read_bytes(), before)
 
+    def test_unquoted_colon_in_plain_scalar_is_repaired(self):
+        path = self.entry()
+        text = path.read_text(encoding="utf-8")
+        text = text.replace("summary: 測試簡介", "summary: 測試: 含冒號的簡介")
+        text = text.replace("features: 敘事形式測試", "features: 敘事形式: 含冒號的特色")
+        path.write_text(text, encoding="utf-8")
+        self.assertEqual(build(self.source, self.output), 1)
+        detail = (self.output / "works/test-work/index.html").read_text(encoding="utf-8")
+        self.assertIn("測試: 含冒號的簡介", detail)
+        self.assertIn("敘事形式: 含冒號的特色", detail)
+
+    def test_nested_source_label_with_unquoted_colon_is_repaired(self):
+        path = self.entry()
+        text = path.read_text(encoding="utf-8")
+        text = text.replace(
+            "editions:",
+            "sources:\n  - label: Metal Skin Panic: MADOX-01\n    url: https://example.com/source\neditions:",
+            1,
+        )
+        path.write_text(text, encoding="utf-8")
+        self.assertEqual(build(self.source, self.output), 1)
+        detail = (self.output / "works/test-work/index.html").read_text(encoding="utf-8")
+        self.assertIn("Metal Skin Panic: MADOX-01", detail)
+
     def test_missing_link_fails_before_writing(self):
         path = self.entry()
         with path.open("a", encoding="utf-8") as file:

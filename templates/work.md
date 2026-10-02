@@ -1,5 +1,5 @@
 ---
-# title 填寫前先查中文名稱：可信中文名 → 英文名 → 原文名；不要自行直譯冒充官方譯名。
+# title 填寫前先查中文名稱：可信中文名 → 英文名 → 原文名；不要自行直譯冒充官方譯名。\n# 含 ASCII ": " 的單行文字值必須加引號，例如 label: "Metal Skin Panic: MADOX-01"。
 id: example-work
 title: 中文譯名
 original_title: 原文標題

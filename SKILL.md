@@ -49,7 +49,7 @@ description: 維護 wiki-library 的 Markdown 跨媒體作品圖書館。當使�
 
 每項 `editions` 必填 `title`，其他可選欄位為 `language`、`format`、`translators`（字串清單）、`publisher`、`year`（整數或空字串）、`isbn`（加引號的字串）、`url`（HTTP(S) 網址或空字串）、`notes`。書籍可記譯本，電影與動畫可記字幕、配音或修復版，遊戲可記平台與語言版本；不要杜撰不存在的發行版本。
 
-未知字串用 `""`，未知清單用 `[]`，不要用 YAML `null`。容易被 YAML 誤讀的文字要加引號。舊的 `interest` 與 `featured` 已停用；不要新增收藏原因，也不要把舊收藏原因直接轉成客觀的 `features`。
+未知字串用 `""`，未知清單用 `[]`，不要用 YAML `null`。**任何單行 YAML 文字只要包含 ASCII `: `（冒號後接空格），一律加單引號或雙引號**，尤其是 `title`、`features`、`summary`、`label`、`notes`。建置器有保守容錯，可在這類漏引號時自動重試，但來源檔仍應保持合法 YAML。舊的 `interest` 與 `featured` 已停用；不要新增收藏原因，也不要把舊收藏原因直接轉成客觀的 `features`。
 
 ## 分類與內容編輯
 

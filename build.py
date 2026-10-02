@@ -48,10 +48,47 @@ def unique_mapping(loader, node):
 UniqueLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, unique_mapping)
 
 
+PLAIN_MAPPING_VALUE = re.compile(r"^(\\s*(?:-\\s+)?[A-Za-z_][A-Za-z0-9_-]*:\\s+)(.+)$")
+
+
+def repair_unquoted_colon_scalars(text: str):
+    """Quote plain mapping values containing ASCII ': ' for one parse retry."""
+    repaired, changed = [], []
+    for line_number, line in enumerate(text.splitlines(), 1):
+        match = PLAIN_MAPPING_VALUE.match(line)
+        if not match:
+            repaired.append(line)
+            continue
+        value = match.group(2)
+        stripped = value.lstrip()
+        if (": " not in value or not stripped
+                or stripped[0] in "\"'[{>|&*!%@"
+                or " #" in value):
+            repaired.append(line)
+            continue
+        repaired.append(match.group(1) + json.dumps(value, ensure_ascii=False))
+        changed.append(line_number)
+    return "\n".join(repaired), changed
+
+
 def read_yaml(text: str, path: Path) -> dict:
     try:
         value = yaml.load(text, Loader=UniqueLoader)
-    except (yaml.YAMLError, ValueError) as exc:
+    except yaml.YAMLError as exc:
+        repaired, changed = repair_unquoted_colon_scalars(text)
+        if not changed:
+            raise ValueError(f"{path}: YAML 格式錯誤：{exc}") from exc
+        try:
+            value = yaml.load(repaired, Loader=UniqueLoader)
+        except (yaml.YAMLError, ValueError) as repaired_exc:
+            raise ValueError(f"{path}: YAML 格式錯誤：{repaired_exc}") from repaired_exc
+        lines = ", ".join(str(line) for line in changed)
+        print(
+            f"警告：{path}: 已自動容錯處理未加引號且包含 ': ' 的 YAML 文字（第 {lines} 行）；"
+            "建議仍在來源檔補上引號。",
+            file=sys.stderr,
+        )
+    except ValueError as exc:
         raise ValueError(f"{path}: YAML 格式錯誤：{exc}") from exc
     if not isinstance(value, dict):
         raise ValueError(f"{path}: YAML 必須是欄位對照表")
