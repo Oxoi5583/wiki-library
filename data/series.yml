@@ -133,3 +133,41 @@ barsoom:
         - title: 火星戰神
           original_title: The Warlord of Mars
           label: 第三部・尚未收錄
+
+hitchhikers-guide:
+  title: 銀河便車指南系列
+  original_title: The Hitchhiker's Guide to the Galaxy
+  aliases: [Hitchhiker's Guide to the Galaxy series, 便車系列]
+  description: Douglas Adams 的科幻喜劇小說系列，源自他為 BBC 寫的同名廣播喜劇。Adams 本人寫了五部，自稱「分成五部的三部曲」；第六部由 Eoin Colfer 執筆。
+  sources:
+    - label: Pan Macmillan：The Hitchhiker's Guide to the Galaxy books — a complete guide
+      url: https://www.panmacmillan.com/blogs/science-fiction-and-fantasy/hitchhikers-guide-to-the-galaxy-book-series
+    - label: 豆瓣叢書「銀河便車指南」（木馬文化）
+      url: https://book.douban.com/series/33395
+  orders:
+    - id: publication
+      title: 出版順序
+      notes: 目前館藏只收錄第一部，後續先保留位置。中文書名依木馬文化 2016 年版。
+      items:
+        - work: hitchhikers-guide-to-the-galaxy
+          label: 第一部
+        - title: 銀河便車指南 2：宇宙盡頭的餐廳
+          original_title: The Restaurant at the End of the Universe
+          label: 第二部
+          notes: 1980 年出版。
+        - title: 銀河便車指南 3：生命，宇宙及萬事萬物
+          original_title: Life, the Universe and Everything
+          label: 第三部
+          notes: 1982 年出版。
+        - title: 銀河便車指南 4：掰掰，謝謝你們的魚啦
+          original_title: So Long, and Thanks for All the Fish
+          label: 第四部
+          notes: 1984 年出版。
+        - title: 銀河便車指南 5：大部無害
+          original_title: Mostly Harmless
+          label: 第五部
+          notes: 1992 年出版。
+        - title: 銀河便車指南 6：啊，還有一件事……
+          original_title: And Another Thing...
+          label: 第六部
+          notes: Eoin Colfer 著，2009 年出版。
