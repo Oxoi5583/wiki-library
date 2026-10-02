@@ -2,7 +2,7 @@
 id: murder-of-roger-ackroyd
 title: "羅傑・艾克洛命案"
 original_title: "The Murder of Roger Ackroyd"
-aliases: ["羅傑艾克洛命案"]
+aliases: ["羅傑艾克洛命案", "羅傑疑案"]
 media: novel
 categories: [mystery-novel]
 tags: ["古典推理", "白羅", "敘事詭計", "鄉村謀殺"]

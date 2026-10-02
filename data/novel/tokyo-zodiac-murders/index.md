@@ -2,7 +2,7 @@
 id: tokyo-zodiac-murders
 title: "占星術殺人事件"
 original_title: "占星術殺人事件"
-aliases: []
+aliases: ["占星術殺人魔法"]
 media: novel
 categories: [mystery-novel]
 tags: ["本格推理", "御手洗潔", "大型詭計", "占星術"]
@@ -17,6 +17,15 @@ status: curious
 added: 2026-10-02
 cover: ""
 editions:
+  - title: "占星術殺人魔法"
+    language: "繁體中文"
+    format: "紙本"
+    translators: ["郭清華"]
+    publisher: "皇冠文化"
+    year: 2003
+    isbn: "9789573319757"
+    url: https://www.crown.com.tw/view.aspx?bc=432001
+    notes: "台灣早期繁中版；後來改訂完全版恢復為《占星術殺人事件》。"
   - title: "占星術殺人事件（改訂完全版）"
     language: "繁體中文"
     format: "紙本"
@@ -27,6 +36,8 @@ editions:
     url: https://www.crown.com.tw/view.aspx?bc=432101
     notes: "台灣正式繁中改訂完全版。"
 sources:
+  - label: "皇冠《占星術殺人魔法》"
+    url: https://www.crown.com.tw/view.aspx?bc=432001
   - label: "皇冠《占星術殺人事件》"
     url: https://www.crown.com.tw/view.aspx?bc=432101
 related: []
