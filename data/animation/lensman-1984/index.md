@@ -28,5 +28,5 @@ sources:
     url: https://eiga.com/movie/68149/
   - label: 中文名稱資料《銀河戰士 (Lensman)》
     url: https://zh.wikipedia.org/wiki/%E9%8A%80%E6%B2%B3%E6%88%B0%E5%A3%AB_%28Lensman%29
-related: []
+related: [galactic-patrol]
 ---

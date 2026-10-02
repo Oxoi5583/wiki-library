@@ -280,3 +280,130 @@ project-itoh:
         - work: genocidal-organ
         - work: harmony
         - work: empire-of-corpses
+
+skylark-series:
+  title: Skylark Series
+  original_title: Skylark
+  aliases: [Skylark series]
+  description: E. E. "Doc" Smith 的早期太空歌劇系列，共四部核心長篇，從 1928 年的《The Skylark of Space》一路延伸至 1960 年代的《Skylark DuQuesne》。
+  sources:
+    - label: Skylark series 書目
+      url: https://en.wikipedia.org/wiki/Skylark_(series)
+  orders:
+    - id: publication
+      title: 出版／閱讀順序
+      items:
+        - work: skylark-of-space
+          label: 第 1 部
+        - work: skylark-three
+          label: 第 2 部
+        - work: skylark-of-valeron
+          label: 第 3 部
+        - work: skylark-duquesne
+          label: 第 4 部
+
+lensman-novels:
+  title: 透鏡人系列
+  original_title: Lensman
+  aliases: [Lensman Series, Lensman]
+  description: E. E. "Doc" Smith 的經典太空歌劇。核心主線通常以六部長篇構成；《The Vortex Blaster / Masters of the Vortex》發生在同一宇宙但不屬 Kinnison 主線。
+  sources:
+    - label: Lensman series narrative sequence
+      url: https://lensman.fandom.com/wiki/Lensman_series
+    - label: Lensman series bibliography
+      url: https://en.wikipedia.org/wiki/Lensman_series
+  orders:
+    - id: core
+      title: 核心主線閱讀順序
+      items:
+        - work: triplanetary
+          label: 第 1 部
+        - work: first-lensman
+          label: 第 2 部
+        - work: galactic-patrol
+          label: 第 3 部
+        - work: gray-lensman
+          label: 第 4 部
+        - work: second-stage-lensmen
+          label: 第 5 部
+        - work: children-of-the-lens
+          label: 第 6 部
+    - id: side
+      title: 同宇宙旁支
+      ordered: false
+      items:
+        - work: vortex-blaster
+          label: Lensman 宇宙旁支
+
+foundation-series:
+  title: 基地系列
+  original_title: Foundation
+  aliases: [Foundation Series, 基地七書]
+  description: 以撒・艾西莫夫本人完成的七部基地小說，包括原始三部曲、兩部後傳與兩部前傳。
+  sources:
+    - label: Penguin Random House Foundation Series
+      url: https://www.penguinrandomhouse.com/series/FOU/foundation/
+    - label: 葉李華「基地系列」七書中文版本
+      url: https://yehleehwa.net/fundation_1.htm
+  orders:
+    - id: publication
+      title: 出版順序
+      items:
+        - work: foundation
+          label: 1951
+        - work: foundation-and-empire
+          label: 1952
+        - work: second-foundation
+          label: 1953
+        - work: foundations-edge
+          label: 1982
+        - work: foundation-and-earth
+          label: 1986
+        - work: prelude-to-foundation
+          label: 1988
+        - work: forward-the-foundation
+          label: 1993
+    - id: chronology
+      title: 故事時間順序
+      items:
+        - work: prelude-to-foundation
+          label: 前傳 1
+        - work: forward-the-foundation
+          label: 前傳 2
+        - work: foundation
+          label: 三部曲 1
+        - work: foundation-and-empire
+          label: 三部曲 2
+        - work: second-foundation
+          label: 三部曲 3
+        - work: foundations-edge
+          label: 後傳 1
+        - work: foundation-and-earth
+          label: 後傳 2
+
+dune-series:
+  title: 沙丘系列
+  original_title: Dune
+  aliases: [Dune Saga, Dune Series, 沙丘六部曲]
+  description: Frank Herbert 親自完成的六部《沙丘》小說。後來 Brian Herbert 與 Kevin J. Anderson 的大量前傳、續傳與外傳屬延伸宇宙，本清單先與原作者核心六部區分。
+  sources:
+    - label: Penguin Random House Frank Herbert's Dune Saga Books 1–6
+      url: https://www.penguinrandomhouse.com/books/667750/frank-herberts-dune-saga-collection-books-1---6-by-frank-herbert/9780593333020/
+    - label: 臺北市立大學圖書館《沙丘》六冊書目
+      url: https://library.utaipei.edu.tw/webpac/bookDetail.do?id=600383
+  orders:
+    - id: publication
+      title: 原著六部曲
+      items:
+        - work: dune
+          label: 第 1 部
+        - work: dune-messiah
+          label: 第 2 部
+        - work: children-of-dune
+          label: 第 3 部
+        - work: god-emperor-of-dune
+          label: 第 4 部
+        - work: heretics-of-dune
+          label: 第 5 部
+        - work: chapterhouse-dune
+          label: 第 6 部
