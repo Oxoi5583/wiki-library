@@ -76,7 +76,7 @@ def repair_detached_empty_collections(text: str):
     lines = text.splitlines()
     repaired, changed = [], []
     index = 0
-    key_only = re.compile(r"^(\\s*[A-Za-z_][A-Za-z0-9_-]*:)\\s*$")
+    key_only = re.compile(r"^(\s*[A-Za-z_][A-Za-z0-9_-]*:)\s*$")
     while index < len(lines):
         line = lines[index]
         if index + 1 < len(lines) and key_only.match(line):
