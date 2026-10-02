@@ -171,3 +171,23 @@ hitchhikers-guide:
           original_title: And Another Thing...
           label: 第六部
           notes: Eoin Colfer 著，2009 年出版。
+
+teixcalaan:
+  title: 泰斯凱蘭系列
+  original_title: Teixcalaan
+  aliases: [Teixcalaan Series]
+  description: 阿卡蒂・馬婷以泰斯凱蘭帝國與萊賽爾太空站為核心的太空歌劇系列，主題包括帝國文化、語言、身分、外交與第一接觸。
+  sources:
+    - label: Macmillan《A Desolation Called Peace》
+      url: https://us.macmillan.com/books/9781250186461/adesolationcalledpeace/
+    - label: 國家圖書館《名為和平的荒蕪》
+      url: https://isbn.ncl.edu.tw/NEW_ISBNNet/main_DisplayRecord_Popup.php?KeepThis=true&Pact=view&Pkey=1110401%2A0060&TB_iframe=true&height=480&width=780
+  orders:
+    - id: publication
+      title: 出版／閱讀順序
+      items:
+        - title: 名為帝國的記憶
+          original_title: A Memory Called Empire
+          label: 第一部・尚未收錄
+        - work: a-desolation-called-peace
+          label: 第二部
