@@ -14,7 +14,7 @@ creators:
   - name: James A. Mann
     role: 編者
 summary: 收錄 Cordwainer Smith 科幻短篇的全集型整理，其中大多數故事屬於「Instrumentality of Mankind」未來史，並依虛構世界內部的大致年代順序排列。
-features: NESFA Press 於 1993 年出版的 Complete Short Science Fiction 版為 687 頁全集。2018 年木馬文化以正式繁中書名《人類補完計畫：考德懷納・史密斯短篇小說選》出版中文版本；其英文副題作 The Rediscovery of Man: The Short Science Fiction of Cordwainer Smith，與 NESFA 的 Complete 版屬不同版次，因此館藏分別記錄。
+features: "NESFA Press 於 1993 年出版的 Complete Short Science Fiction 版為 687 頁全集。2018 年木馬文化以正式繁中書名《人類補完計畫：考德懷納・史密斯短篇小說選》出版中文版本；其英文副題作 The Rediscovery of Man: The Short Science Fiction of Cordwainer Smith，與 NESFA 的 Complete 版屬不同版次，因此館藏分別記錄。"
 status: curious
 added: 2026-10-02
 cover: ""
