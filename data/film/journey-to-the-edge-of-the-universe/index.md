@@ -1,8 +1,8 @@
 ---
 id: journey-to-the-edge-of-the-universe
-title: Journey to the Edge of the Universe
+title: 旅行到宇宙邊緣
 original_title: Journey to the Edge of the Universe
-aliases: []
+aliases: [國家地理：旅行到宇宙邊緣]
 media: film
 categories: [documentary]
 tags: [宇宙學, 天文學, 太陽系, 星系, 黑洞, 可觀測宇宙, CGI]
@@ -16,7 +16,7 @@ creators:
   - name: Billie Pink
     role: 編劇
 summary: 以視覺化的虛擬宇宙旅程從地球出發，越過月球、行星、恆星、星雲與星系，一路推進到可觀測宇宙的極遠處，沿途介紹不同尺度上的天體與物理現象。
-features: National Geographic、Pioneer Productions 與 Handel Productions 合作的 90 分鐘級科學紀錄片。核心形式是一段近似不中斷的 CGI 鏡頭，把極端尺度差異轉化成連續空間旅行，讓宇宙學知識以「一路飛出去」的直觀方式呈現。
+features: National Geographic、Pioneer Productions 與 Handel Productions 合作的 90 分鐘級科學紀錄片。中文播映與影音流通資料普遍使用《旅行到宇宙邊緣》；核心形式是一段近似不中斷的 CGI 鏡頭，把極端尺度差異轉化成連續空間旅行。
 status: curious
 added: 2026-10-02
 cover: ""
@@ -33,8 +33,8 @@ editions:
 sources:
   - label: Pioneer Productions《Journey to the Edge of the Universe》
     url: https://pioneertv.com/programmes/journey-to-the-edge-of-the-universe/
-  - label: National Geographic Channel Canada — Space
-    url: https://www.natgeotv.com/ca/space
+  - label: 中文播映名稱《旅行到宇宙邊緣》
+    url: https://zh.wikipedia.org/wiki/%E6%97%85%E8%A1%8C%E5%88%B0%E5%AE%87%E5%AE%99%E8%BE%B9%E7%BC%98
 related: []
 ---
 

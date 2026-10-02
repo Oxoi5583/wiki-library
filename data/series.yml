@@ -111,3 +111,25 @@ seikai:
         - title: 星界の断章Ⅲ
           original_title: 星界の断章Ⅲ
           label: 斷章 III・尚未收錄
+
+barsoom:
+  title: 巴森系列
+  original_title: Barsoom
+  aliases: [Barsoom Series, 火星系列]
+  description: 埃德加・賴斯・巴勒斯以火星「Barsoom」為舞台的行星羅曼史／科學奇幻系列，《火星公主》為第一部。
+  sources:
+    - label: Project Gutenberg《A Princess of Mars》
+      url: https://www.gutenberg.org/ebooks/62
+  orders:
+    - id: publication
+      title: 主要出版順序
+      notes: 目前館藏只正式收錄第一部，後續先保留位置。
+      items:
+        - work: a-princess-of-mars
+          label: 第一部
+        - title: 火星眾神
+          original_title: The Gods of Mars
+          label: 第二部・尚未收錄
+        - title: 火星戰神
+          original_title: The Warlord of Mars
+          label: 第三部・尚未收錄

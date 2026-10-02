@@ -2,7 +2,7 @@
 id: instrumentality-of-mankind
 title: The Instrumentality of Mankind
 original_title: The Instrumentality of Mankind
-aliases: [Instrumentality of Mankind]
+aliases: [Instrumentality of Mankind, 人類補完機構]
 media: novel
 categories: [science-fiction-collection]
 tags: [未來史, 太空歌劇, 人工生命, 遠未來, 政治制度, 人類補完機構]
@@ -12,7 +12,7 @@ creators:
   - name: Cordwainer Smith
     role: 作者
 summary: 收錄 Cordwainer Smith 多篇以「Instrumentality of Mankind」未來史為背景的短篇，描寫跨越極長年代的人類文明、星際治理、技術變遷與由動物改造而來的 Underpeople。
-features: 1979 年由 Ballantine／Del Rey 出版的短篇集，收錄 14 篇作品。它不是完整的 Instrumentality 短篇全集，而是較早期、較精煉的一組選集；後來 1993 年的《The Rediscovery of Man》才把 Smith 的全部科幻短篇集中整理出版。
+features: 1979 年由 Ballantine／Del Rey 出版的短篇集，收錄 14 篇作品。中文世界常把 Instrumentality of Mankind 這個統治機構／未來史稱為「人類補完機構」，但目前未查到這本 1979 選集本身的正式繁中版，因此主標題保留英文，中文譯名只列為別名。
 status: curious
 added: 2026-10-02
 cover: ""
@@ -31,6 +31,8 @@ sources:
     url: https://sf-encyclopedia.com/entry/smith_cordwainer
   - label: University of Kansas Cordwainer Smith bibliography
     url: https://ksrlpdf.ku.edu/ksrl.sc.smithcordwainer.pdf
+  - label: 國立國會圖書館《第81Q戦争：人類補完機構》
+    url: https://ndlsearch.ndl.go.jp/books/R100000002-I000002562871
 related: [rediscovery-of-man-complete-short-fiction]
 ---
 
