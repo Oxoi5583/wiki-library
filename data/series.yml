@@ -548,3 +548,147 @@ enderverse:
       items:
         - work: children-of-the-fleet
           label: 目前收錄長篇
+
+honor-harrington:
+  title: 榮耀・哈靈頓系列
+  original_title: Honor Harrington Sequence
+  aliases: [Honor Harrington Series, Honorverse]
+  description: David Weber 以 Honor Harrington 為核心的軍事太空歌劇。Baen 的核心 Sequence 為十四部正傳；更大的 Honorverse 另有 Saganami Island、Crown of Slaves、Star Kingdom、Manticore Ascendant、短篇集與其他旁支。
+  sources:
+    - label: Baen The Honor Harrington Sequence
+      url: https://www.baen.com/honor-harrington-sequence.html
+    - label: Baen Honor Harrington complete-series catalogue
+      url: https://www.baen.com/honor-harrington-complete-series.html
+  orders:
+    - id: core
+      title: 核心正傳・出版順序
+      items:
+        - work: on-basilisk-station
+          label: 第 1 部
+        - work: honor-of-the-queen
+          label: 第 2 部
+        - work: short-victorious-war
+          label: 第 3 部
+        - work: field-of-dishonor
+          label: 第 4 部
+        - work: flag-in-exile
+          label: 第 5 部
+        - work: honor-among-enemies
+          label: 第 6 部
+        - work: in-enemy-hands
+          label: 第 7 部
+        - work: echoes-of-honor
+          label: 第 8 部
+        - work: ashes-of-victory
+          label: 第 9 部
+        - work: war-of-honor
+          label: 第 10 部
+        - work: at-all-costs
+          label: 第 11 部
+        - work: mission-of-honor
+          label: 第 12 部
+        - work: a-rising-thunder
+          label: 第 13 部
+        - work: uncompromising-honor
+          label: 第 14 部
+    - id: side
+      title: Honorverse 相關單獨長篇
+      ordered: false
+      items:
+        - work: toll-of-honor
+          label: 2024・早期主線插曲
+
+succession-duology:
+  title: Succession
+  original_title: Succession
+  aliases: [里森帝國系列, The Succession Duology]
+  description: Scott Westerfeld 的兩部太空歌劇，完整故事由《The Risen Empire》與《The Killing of Worlds》組成。
+  sources:
+    - label: Google Books The Succession Duology
+      url: https://books.google.com/books/about/The_Succession_Duology.html?id=sHtJDwAAQBAJ
+  orders:
+    - id: publication
+      title: 閱讀順序
+      items:
+        - work: the-risen-empire
+          label: 第 1 部
+        - work: the-killing-of-worlds
+          label: 第 2 部
+
+aerospace-force-history:
+  title: 航空宇宙軍史
+  original_title: 航空宇宙軍史
+  aliases: [航空宇宙軍史・完全版, 新・航空宇宙軍史]
+  description: 谷甲州的太陽系硬科幻／軍事科幻作品群。現行早川書房《完全版》將舊系列整理為五冊；其後《新・航空宇宙軍史》目前出版兩冊。
+  sources:
+    - label: 早川書房 航空宇宙軍史・完全版
+      url: https://www.hayakawa-online.co.jp/shop/g/g0000021240/
+    - label: 早川書房 新・航空宇宙軍史
+      url: https://www.hayakawa-online.co.jp/shop/g/g0000612474/
+  orders:
+    - id: complete-edition
+      title: 航空宇宙軍史・完全版
+      items:
+        - work: aerospace-force-history-complete-1
+          label: 第 1 冊
+        - work: aerospace-force-history-complete-2
+          label: 第 2 冊
+        - work: aerospace-force-history-complete-3
+          label: 第 3 冊
+        - work: aerospace-force-history-complete-4
+          label: 第 4 冊
+        - work: aerospace-force-history-complete-5
+          label: 第 5 冊
+    - id: new-series
+      title: 新・航空宇宙軍史
+      items:
+        - work: columbia-zero
+          label: 第 1 冊
+        - work: mamiya-war
+          label: 第 2 冊
+
+earth-federation-rise-fall:
+  title: 地球連邦的興亡
+  original_title: 地球連邦の興亡
+  aliases: [Rise and Fall of Federation, Earth]
+  description: 佐藤大輔的軍事科幻系列，正傳四冊描寫第一次獵戶座大戰後地球連邦與殖民地的政治、社會與軍事危機；另有《宇宙軍陸戦隊 地球連邦の興亡》補充作品。
+  sources:
+    - label: 中央公論新社 地球連邦の興亡
+      url: https://www.chuko.co.jp/search.php?name1=&name2=%E4%BD%90%E8%97%A4%E5%A4%A7%E8%BC%94&name3=&name4=&name5=&name6=&name7=&name8=&num=15
+  orders:
+    - id: core
+      title: 正傳
+      items:
+        - work: earth-federation-rise-fall-1
+          label: 第 1 冊
+        - work: earth-federation-rise-fall-2
+          label: 第 2 冊
+        - work: earth-federation-rise-fall-3
+          label: 第 3 冊
+        - work: earth-federation-rise-fall-4
+          label: 第 4 冊
+    - id: side
+      title: 補充作品
+      ordered: false
+      items:
+        - work: space-marine-earth-federation
+          label: 宇宙軍陸戰隊／前史・旁支
+
+forever-hero:
+  title: The Forever Hero
+  original_title: The Forever Hero
+  aliases: [沉默的戰士三部曲, Forever Hero Trilogy]
+  description: L. E. Modesitt Jr. 的早期科幻三部曲，描寫 Gerswin 從毀滅後地球的孩子成長為足以重建故鄉並改變星際秩序的人物。
+  sources:
+    - label: Macmillan Forever Hero series
+      url: https://us.macmillan.com/series/foreverhero
+  orders:
+    - id: publication
+      title: 閱讀順序
+      items:
+        - work: dawn-for-a-distant-earth
+          label: 第 1 部
+        - work: the-silent-warrior
+          label: 第 2 部
+        - work: in-endless-twilight
+          label: 第 3 部
