@@ -13,6 +13,7 @@ media:
   nonfiction: 非虛構
   series: 影集
   music: 音樂
+  play: 戲劇
   other: 其他
 
 # 作品分類：使用通行的文類、作品類型或學術領域。
@@ -27,6 +28,9 @@ categories:
   literary-fiction: 文學小說
   science-fiction-film: 科幻電影
   documentary: 紀錄片
+  drama-series: 電視劇
+  variety-series: 綜藝節目
+  stage-play: 舞台劇本
   animation-film: 動畫電影
   science-fiction-animation: 科幻動畫
   mecha-animation: 機器人動畫

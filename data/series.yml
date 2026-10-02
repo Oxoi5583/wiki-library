@@ -243,3 +243,20 @@ giants:
           label: 第四部
         - work: mission-to-minerva
           label: 第五部
+
+gunbuster:
+  title: 飛越巔峰系列
+  original_title: トップをねらえ！
+  aliases: [Gunbuster Series, Aim for the Top!, Diebuster]
+  description: GAINAX 以宇宙怪獸、相對論時間差與巨大機器人為核心的科幻 OVA 系列；1988 年《飛越巔峰》與 2004 年《飛越巔峰2》相隔多年製作，但構成直接續作關係。
+  sources:
+    - label: Bandai Namco Filmworks《トップをねらえ！＆トップをねらえ2！》
+      url: https://www.bandainamco.co.jp/cgi-bin/releases/index.cgi/press/11332?entry_id=7970
+  orders:
+    - id: release
+      title: 發行／觀看順序
+      items:
+        - work: gunbuster
+          label: 第一部
+        - work: diebuster
+          label: 第二部
