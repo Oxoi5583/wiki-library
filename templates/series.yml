@@ -1,0 +1,35 @@
+# 此檔只是格式範例，不會參與建置；使用時合併到 data/series.yml。
+# example-work 必須替換成館藏已有的 id；本範例的人名、書名與順序不代表真實作品。
+example-cycle:
+  title: 範例系列
+  original_title: Example Cycle
+  aliases: []
+  description: 說明系列範圍，例如正傳、前傳及外傳；不要把改編版默認為續作。
+  sources: []
+  orders:
+    - id: release
+      title: 出版／發行順序
+      notes: 這份清單的範圍與查證依據。
+      items:
+        - work: example-work
+          label: 第一部
+        - title: 尚未收錄的第二部
+          original_title: Example Volume II
+          label: 第二部
+          notes: 未收錄作品保留位置，不建立虛假的作品頁。
+    - id: chronology
+      title: 故事時間順序
+      notes: 只有已查證的先後關係才列入。
+      items:
+        - title: 尚未收錄的前傳
+          original_title: Example Prequel
+          label: 前傳
+        - work: example-work
+    - id: members
+      title: 外傳與其他成員
+      ordered: false
+      notes: 成員名單不表示先後順序；可用來收錄順序不明或可獨立閱讀的作品。
+      items:
+        - title: 尚未收錄的外傳
+          original_title: Example Side Story
+          label: 外傳

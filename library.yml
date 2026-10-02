@@ -1,0 +1,36 @@
+title: Wiki Library
+subtitle: 跨媒體作品圖書館
+description: 跨媒體作品目錄，提供中原文名稱、作品分類、主創、簡介、特色及版本資料。
+
+# 媒體：作品是以甚麼形式呈現。新增鍵值即可擴充。
+media:
+  novel: 小說
+  academic: 學術書
+  film: 電影
+  animation: 動畫
+  game: 遊戲
+  comic: 漫畫
+  nonfiction: 非虛構
+  series: 影集
+  music: 音樂
+  other: 其他
+
+# 作品分類：使用通行的文類、作品類型或學術領域。
+# 跨媒體的學科與題材（哲學、軍事、政治學等）記在各作品的 tags。
+categories:
+  science-fiction-novel: 科幻小說
+  historical-novel: 歷史小說
+  mystery-novel: 推理小說
+  fantasy-novel: 奇幻小說
+  literary-fiction: 文學小說
+  science-fiction-film: 科幻電影
+  documentary: 紀錄片
+  animation-film: 動畫電影
+  adventure-game: 冒險遊戲
+  role-playing-game: 角色扮演遊戲
+  strategy-game: 策略遊戲
+  science-fiction-comic: 科幻漫畫
+  social-science: 社會科學
+  humanities: 人文學術
+  natural-science: 自然科學
+  philosophy: 哲學著作

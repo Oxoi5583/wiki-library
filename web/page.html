@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="$description" />
+    <meta name="color-scheme" content="light dark" />
+    <title>$title · $site_title</title>
+    <script>
+      try {
+        var t = localStorage.getItem("wiki-library-theme");
+        if (t === "dark" || t === "light")
+          document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <link rel="icon" type="image/svg+xml" href="$favicon" />
+    <style>
+      $stylesheet
+    </style>
+    <script src="$script" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#content">跳至主要內容</a>
+    <header class="masthead">
+      <a class="brand" href="$home"
+        ><span class="brand-mark" aria-hidden="true">$logo</span
+        ><span>$site_title<small>$site_subtitle</small></span></a
+      >
+      <nav aria-label="主要導覽">
+        <a class="$home_active" href="$home">館藏目錄</a
+        ><a class="$catalog_active" href="$catalog">全部館藏</a
+        ><a class="$tags_active" href="$tags">標籤索引</a
+        ><a class="$series_active" href="$series">系列索引</a>
+      </nav>
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="切換深淺色"
+        title="切換深淺色"
+      >
+        <span aria-hidden="true">◐</span>
+      </button>
+    </header>
+    <div class="shell">
+      <aside class="sidebar">$sidebar</aside>
+      <main id="content" tabindex="-1">$content</main>
+    </div>
+    <footer class="site-footer">
+      <span>$site_title <span aria-hidden="true">／</span> 跨媒體作品目錄</span>
+      <a href="#top" aria-label="回到頁首">回到頁首 ↑</a>
+    </footer>
+  </body>
+</html>
