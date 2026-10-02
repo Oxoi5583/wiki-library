@@ -48,7 +48,7 @@ def unique_mapping(loader, node):
 UniqueLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, unique_mapping)
 
 
-PLAIN_MAPPING_VALUE = re.compile(r"^(\\s*(?:-\\s+)?[A-Za-z_][A-Za-z0-9_-]*:\\s+)(.+)$")
+PLAIN_MAPPING_VALUE = re.compile(r"^(\s*(?:-\s+)?[A-Za-z_][A-Za-z0-9_-]*:\s+)(.+)$")
 
 
 def repair_unquoted_colon_scalars(text: str):
