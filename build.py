@@ -71,23 +71,49 @@ def repair_unquoted_colon_scalars(text: str):
     return "\n".join(repaired), changed
 
 
+def repair_detached_empty_collections(text: str):
+    """Repair the common accidental form 'key:\n[]' / 'key:\n{}'."""
+    lines = text.splitlines()
+    repaired, changed = [], []
+    index = 0
+    key_only = re.compile(r"^(\\s*[A-Za-z_][A-Za-z0-9_-]*:)\\s*$")
+    while index < len(lines):
+        line = lines[index]
+        if index + 1 < len(lines) and key_only.match(line):
+            next_line = lines[index + 1]
+            if next_line.strip() in ("[]", "{}") and len(next_line) - len(next_line.lstrip()) <= len(line) - len(line.lstrip()):
+                repaired.append(line.rstrip() + " " + next_line.strip())
+                changed.append(index + 1)
+                index += 2
+                continue
+        repaired.append(line)
+        index += 1
+    return "\n".join(repaired), changed
+
+
+def repair_common_yaml(text: str):
+    repaired, collection_lines = repair_detached_empty_collections(text)
+    repaired, colon_lines = repair_unquoted_colon_scalars(repaired)
+    return repaired, collection_lines, colon_lines
+
+
 def read_yaml(text: str, path: Path) -> dict:
     try:
         value = yaml.load(text, Loader=UniqueLoader)
     except yaml.YAMLError as exc:
-        repaired, changed = repair_unquoted_colon_scalars(text)
-        if not changed:
+        repaired, collection_lines, colon_lines = repair_common_yaml(text)
+        if not collection_lines and not colon_lines:
             raise ValueError(f"{path}: YAML 格式錯誤：{exc}") from exc
         try:
             value = yaml.load(repaired, Loader=UniqueLoader)
         except (yaml.YAMLError, ValueError) as repaired_exc:
             raise ValueError(f"{path}: YAML 格式錯誤：{repaired_exc}") from repaired_exc
-        lines = ", ".join(str(line) for line in changed)
-        print(
-            f"警告：{path}: 已自動容錯處理未加引號且包含 ': ' 的 YAML 文字（第 {lines} 行）；"
-            "建議仍在來源檔補上引號。",
-            file=sys.stderr,
-        )
+        repairs = []
+        if collection_lines:
+            repairs.append("空清單／空物件斷行：" + ", ".join(str(line) for line in collection_lines))
+        if colon_lines:
+            repairs.append("未加引號且包含 ': '：" + ", ".join(str(line) for line in colon_lines))
+        print(f"警告：{path}: Build 已自動修復 YAML（{'；'.join(repairs)}）。", file=sys.stderr)
     except ValueError as exc:
         raise ValueError(f"{path}: YAML 格式錯誤：{exc}") from exc
     if not isinstance(value, dict):
@@ -95,19 +121,44 @@ def read_yaml(text: str, path: Path) -> dict:
     return value
 
 
-def text_field(meta, key, path, required=False):
+def scalar_text(value):
+    """Convert safe YAML scalar types back to presentation text."""
+    if isinstance(value, str):
+        return value
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    if isinstance(value, date):
+        return value.isoformat()
+    if isinstance(value, (int, float)):
+        return str(value)
+    return None
+
+
+def text_field(meta, key, path, required=False, coerce_scalar=False):
     value = meta.get(key, "")
+    if coerce_scalar and not isinstance(value, str):
+        converted = scalar_text(value)
+        if converted is not None:
+            value = converted
+            meta[key] = converted
     if not isinstance(value, str) or (required and not value.strip()):
         raise ValueError(f"{path}: {key} 必須是{'非空' if required else ''}字串")
     meta[key] = value.strip()
     return meta[key]
 
 
-def list_field(meta, key, path):
+def list_field(meta, key, path, coerce_scalars=False):
     value = meta.get(key, [])
-    if not isinstance(value, list) or any(not isinstance(x, str) or not x.strip() for x in value):
+    if not isinstance(value, list):
         raise ValueError(f"{path}: {key} 必須是字串清單，可用 [] 留空")
-    meta[key] = list(dict.fromkeys(x.strip() for x in value))
+    normalized = []
+    for item in value:
+        if coerce_scalars and not isinstance(item, str):
+            item = scalar_text(item)
+        if not isinstance(item, str) or not item.strip():
+            raise ValueError(f"{path}: {key} 必須是字串清單，可用 [] 留空")
+        normalized.append(item.strip())
+    meta[key] = list(dict.fromkeys(normalized))
     return meta[key]
 
 
@@ -159,16 +210,21 @@ def load_entry(path, config):
     if end is None:
         raise ValueError(f"{path}: metadata 缺少結束的 ---")
     meta = read_yaml("\n".join(lines[1:end]), path)
-    for key in ("id", "title", "original_title", "media", "summary"):
+    for key in ("id", "media"):
         text_field(meta, key, path, required=True)
+    for key in ("title", "original_title", "summary"):
+        text_field(meta, key, path, required=True, coerce_scalar=True)
     if not SLUG.fullmatch(meta["id"]):
         raise ValueError(f"{path}: id 須為小寫英文／數字短名，以連字號分隔")
     if meta["media"] not in config["media"]:
         raise ValueError(f"{path}: 未知媒體 {meta['media']}，請先在 library.yml 定義")
-    for key in ("original_language", "features", "cover"):
-        text_field(meta, key, path)
-    for key in ("categories", "tags", "aliases", "related"):
+    for key in ("original_language", "features"):
+        text_field(meta, key, path, coerce_scalar=True)
+    text_field(meta, "cover", path)
+    for key in ("categories", "related"):
         list_field(meta, key, path)
+    for key in ("tags", "aliases"):
+        list_field(meta, key, path, coerce_scalars=True)
     if not meta["categories"] or any(c not in config["categories"] for c in meta["categories"]):
         raise ValueError(f"{path}: categories 需要至少一個 library.yml 已定義的主題")
     status = meta.setdefault("status", "curious")
@@ -186,17 +242,17 @@ def load_entry(path, config):
         raise ValueError(f"{path}: added 必須是有效的 YYYY-MM-DD 日期") from exc
     year_field(meta, "year", path)
     for person in records(meta, "creators", path):
-        text_field(person, "name", path, required=True)
-        text_field(person, "role", path, required=True)
+        text_field(person, "name", path, required=True, coerce_scalar=True)
+        text_field(person, "role", path, required=True, coerce_scalar=True)
     for edition in records(meta, "editions", path):
-        text_field(edition, "title", path, required=True)
+        text_field(edition, "title", path, required=True, coerce_scalar=True)
         for key in ("language", "format", "publisher", "isbn", "notes"):
-            text_field(edition, key, path)
-        list_field(edition, "translators", path)
+            text_field(edition, key, path, coerce_scalar=True)
+        list_field(edition, "translators", path, coerce_scalars=True)
         year_field(edition, "year", path)
         url_field(edition, "url", path)
     for source in records(meta, "sources", path):
-        text_field(source, "label", path, required=True)
+        text_field(source, "label", path, required=True, coerce_scalar=True)
         if not url_field(source, "url", path):
             raise ValueError(f"{path}: sources 的 url 不能留空")
     cover = meta["cover"]
@@ -224,11 +280,11 @@ def load_series(source, by_id):
         if not SLUG.fullmatch(identifier) or not isinstance(series, dict):
             raise ValueError(f"{path}: 系列鍵須為小寫英文短名，值須為欄位對照表")
         for field in ("title", "original_title"):
-            text_field(series, field, path, required=True)
-        text_field(series, "description", path)
-        list_field(series, "aliases", path)
+            text_field(series, field, path, required=True, coerce_scalar=True)
+        text_field(series, "description", path, coerce_scalar=True)
+        list_field(series, "aliases", path, coerce_scalars=True)
         for record in records(series, "sources", path):
-            text_field(record, "label", path, required=True)
+            text_field(record, "label", path, required=True, coerce_scalar=True)
             if not url_field(record, "url", path):
                 raise ValueError(f"{path}: 系列 sources 的 url 不能留空")
         orders = records(series, "orders", path)
@@ -240,8 +296,8 @@ def load_series(source, by_id):
             if not SLUG.fullmatch(order_id) or order_id in order_ids:
                 raise ValueError(f"{path}: 系列 {identifier} 的順序 id 無效或重複：{order_id}")
             order_ids.add(order_id)
-            text_field(order, "title", path, required=True)
-            text_field(order, "notes", path)
+            text_field(order, "title", path, required=True, coerce_scalar=True)
+            text_field(order, "notes", path, coerce_scalar=True)
             if not isinstance(order.setdefault("ordered", True), bool):
                 raise ValueError(f"{path}: ordered 必須是 true 或 false")
             items = records(order, "items", path)
@@ -249,8 +305,8 @@ def load_series(source, by_id):
                 raise ValueError(f"{path}: 系列 {identifier} 的 {order_id} 需要至少一個項目")
             seen = set()
             for item in items:
-                text_field(item, "label", path)
-                text_field(item, "notes", path)
+                text_field(item, "label", path, coerce_scalar=True)
+                text_field(item, "notes", path, coerce_scalar=True)
                 if "work" in item:
                     work_id = text_field(item, "work", path, required=True)
                     if work_id not in by_id:
@@ -263,7 +319,7 @@ def load_series(source, by_id):
                     item["original_title"] = by_id[work_id]["meta"]["original_title"]
                 else:
                     for field in ("title", "original_title"):
-                        text_field(item, field, path, required=True)
+                        text_field(item, field, path, required=True, coerce_scalar=True)
                     item["work"] = ""
                     identity = ("title", item["title"], item["original_title"])
                 if identity in seen:

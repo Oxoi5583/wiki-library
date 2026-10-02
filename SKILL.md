@@ -145,3 +145,8 @@ example-cycle:
 若沒有執行環境，交付變更檔案和建置指令，明確區分「檔案已修改」與「網站已建置」。沒有使用者明確指令，不執行 commit、push 或部署。
 
 最後用幾句話交代新增／修改／移除的作品、重要變動、相關檔案、查證缺口與實際完成的檢查。提供可點擊的檔案或修改結果，不逐項重述操作過程，也不聲稱已完成未執行的寫入或測試。
+
+
+### Build 自動修復
+
+Build 會自動正規化安全的 YAML scalar：顯示文字欄位（如 title、label、notes、summary、features、作者／角色名稱、aliases、tags）即使被 YAML 解析成數字、布林或日期，也會轉回字串；常見的 `key:\n[]`／`key:\n{}` 斷行與未加引號的 `: ` 文字也會在記憶體中自動修復後重試。結構欄位（id、work、media、URL、categories、related、ordered 等）仍保持嚴格驗證，避免把真正的資料錯誤靜默吞掉。

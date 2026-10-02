@@ -262,3 +262,8 @@ python -m unittest discover -s tests -v
 測試涵蓋空館藏、中英標題與搜尋資料、圖片與 Markdown 連結、範例網站的本機連結／錨點、無效 metadata、重複 id、未知媒體及輸出檔案保護。
 
 可選的瀏覽器測試需要 Node.js 和 Playwright；一般建置不需要。自行安裝 `playwright` 後執行 `node tests/browser.cjs`，預設使用本機 Microsoft Edge。可用 `WIKI_BROWSER=chrome` 改用 Chrome，或把 `WIKI_PLAYWRIGHT` 設為已安裝 Playwright 套件的絕對路徑。測試使用 `file://`，驗證搜尋、組合篩選、網址狀態、深淺色、手機版與無 JavaScript 導覽，並輸出已被 Git 忽略的 `preview-*.png` 截圖。
+
+
+### Build 容錯
+
+Build 會自動正規化可安全判斷的 YAML 顯示值，例如 `label: 1951` 會視為顯示文字 `"1951"`；也會修復常見的 `editions:\n[]`／`sources:\n[]` 斷行，以及未加引號而包含 ASCII `: ` 的文字。這些修復只存在於建置記憶體中，不會放寬 id、work、URL、media、category、related、ordered 等結構性驗證。

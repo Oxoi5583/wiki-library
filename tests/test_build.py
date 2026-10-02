@@ -149,6 +149,38 @@ class BuildTests(unittest.TestCase):
         detail = (self.output / "works/test-work/index.html").read_text(encoding="utf-8")
         self.assertIn("Metal Skin Panic: MADOX-01", detail)
 
+    def test_detached_empty_collection_is_repaired(self):
+        path = self.entry(editions=[])
+        text = path.read_text(encoding="utf-8")
+        text = text.replace("editions: []", "editions:\n[]")
+        path.write_text(text, encoding="utf-8")
+        self.assertEqual(build(self.source, self.output), 1)
+        detail = (self.output / "works/test-work/index.html").read_text(encoding="utf-8")
+        self.assertIn("版本待補", detail)
+
+    def test_series_numeric_labels_are_normalized_to_text(self):
+        self.entry("first")
+        self.entry("third")
+        self.series(
+            orders=[
+                {"id": "publication", "title": "出版順序",
+                 "items": [{"work": "first", "label": 1951},
+                           {"work": "third", "label": 1993}]}
+            ]
+        )
+        self.assertEqual(build(self.source, self.output), 2)
+        listing = (self.output / "series/example-cycle/index.html").read_text(encoding="utf-8")
+        self.assertIn("1951", listing)
+        self.assertIn("1993", listing)
+
+    def test_presentation_scalars_are_normalized_but_structural_ids_stay_strict(self):
+        self.entry(title=1984, summary=42, tags=[2026, "科幻"])
+        self.assertEqual(build(self.source, self.output), 1)
+        detail = (self.output / "works/test-work/index.html").read_text(encoding="utf-8")
+        self.assertIn(">1984<", detail)
+        self.assertIn("42", detail)
+        self.assertIn("# 2026", detail)
+
     def test_missing_link_fails_before_writing(self):
         path = self.entry()
         with path.open("a", encoding="utf-8") as file:
