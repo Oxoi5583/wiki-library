@@ -407,3 +407,144 @@ dune-series:
           label: 第 5 部
         - work: chapterhouse-dune
           label: 第 6 部
+
+ringworld-series:
+  title: Ringworld 系列
+  original_title: Ringworld
+  aliases: [Known Space / Ringworld, 環形世界系列]
+  description: Larry Niven 的 Ringworld 核心四部曲，屬於更大的 Known Space 宇宙。Known Space 還包含大量其他小說、短篇與 Man-Kzin Wars 等作品，因此此處只把有明確連續關係的 Ringworld 四部排成閱讀順序。
+  sources:
+    - label: Ringworld series
+      url: https://en.wikipedia.org/wiki/Ringworld_series
+    - label: Known Space reading order
+      url: https://www.larryniven.net/?q=reading-order
+  orders:
+    - id: core
+      title: Ringworld 核心四部曲
+      items:
+        - work: ringworld
+          label: 第 1 部
+        - work: ringworld-engineers
+          label: 第 2 部
+        - work: ringworld-throne
+          label: 第 3 部
+        - work: ringworlds-children
+          label: 第 4 部
+
+moties:
+  title: Moties 系列
+  original_title: Moties
+  aliases: [The Mote in God's Eye Series]
+  description: 以《The Mote in God's Eye》的人類與 Motie 第一次接觸為核心；前兩部由 Larry Niven 與 Jerry Pournelle 合著，第三部《Outies》由 Jennifer R. Pournelle 撰寫並獲授權延續世界觀。
+  sources:
+    - label: Moties publication order
+      url: https://www.orderofbooks.com/authors/larry-niven/
+  orders:
+    - id: publication
+      title: 出版順序
+      items:
+        - work: mote-in-gods-eye
+          label: 1974
+        - work: gripping-hand
+          label: 1993
+        - work: outies
+          label: 2010・授權續作
+
+forever-war-series:
+  title: 永世之戰系列
+  original_title: The Forever War
+  aliases: [Forever War Series]
+  description: Joe Haldeman 以《永世之戰》為中心的三部關聯長篇。《永世自由》是 William Mandella 故事的直接續作；《永世和平》則是共享反戰與軍事科技主題的獨立姊妹作，不在同一故事連續線。
+  sources:
+    - label: 誠品《永世之戰》作者與系列資料
+      url: https://www.eslite.com/product/1001123032566925
+  orders:
+    - id: publication
+      title: 出版順序
+      items:
+        - work: forever-war
+          label: 1974
+        - work: forever-peace
+          label: 1997・主題姊妹作
+        - work: forever-free
+          label: 1999・直接續作
+    - id: mandella
+      title: William Mandella 故事線
+      items:
+        - work: forever-war
+          label: 第 1 部
+        - work: forever-free
+          label: 第 2 部
+
+enderverse:
+  title: Enderverse
+  original_title: Ender Universe
+  aliases: [安德宇宙, Ender's Game Universe]
+  description: Orson Scott Card 以《戰爭遊戲》為中心的共享宇宙。官方將主要長篇分成 Ender Saga、Shadow Series、Formic Wars 等不同支線；這些支線的故事時間彼此交錯，因此不合併成單一總閱讀順序。
+  sources:
+    - label: Macmillan Orson Scott Card
+      url: https://us.macmillan.com/author/orsonscottcard/
+    - label: 誠品《Ender's Game》Ender Universe 書目
+      url: https://www.eslite.com/product/1001294884055189
+  orders:
+    - id: ender-saga-publication
+      title: Ender Saga・出版順序
+      items:
+        - work: enders-game
+          label: 第 1 部・1985
+        - work: speaker-for-the-dead
+          label: 第 2 部・1986
+        - work: xenocide
+          label: 第 3 部・1991
+        - work: children-of-the-mind
+          label: 第 4 部・1996
+        - work: ender-in-exile
+          label: 第 5 部・2008
+        - work: the-last-shadow
+          label: 第 6 部・2021
+    - id: ender-saga-chronology
+      title: Ender Saga・故事時間順序
+      items:
+        - work: enders-game
+        - work: ender-in-exile
+        - work: speaker-for-the-dead
+        - work: xenocide
+        - work: children-of-the-mind
+        - work: the-last-shadow
+    - id: shadow-series
+      title: Shadow Series
+      items:
+        - work: enders-shadow
+          label: 第 1 部
+        - work: shadow-of-the-hegemon
+          label: 第 2 部
+        - work: shadow-puppets
+          label: 第 3 部
+        - work: shadow-of-the-giant
+          label: 第 4 部
+        - work: shadows-in-flight
+          label: 第 5 部
+        - work: the-last-shadow
+          label: Ender／Shadow 跨線結局
+    - id: first-formic-war
+      title: First Formic War
+      items:
+        - work: earth-unaware
+          label: 第 1 部
+        - work: earth-afire
+          label: 第 2 部
+        - work: earth-awakens
+          label: 第 3 部
+    - id: second-formic-war
+      title: Second Formic War・目前已出版
+      notes: 截至 2026-10-02，Macmillan 官方系列頁列出已出版長篇為《The Swarm》與《The Hive》；不為尚未出版的後續卷建立館藏。
+      items:
+        - work: the-swarm
+          label: 第 1 部
+        - work: the-hive
+          label: 第 2 部
+    - id: fleet-school
+      title: Fleet School 支線
+      items:
+        - work: children-of-the-fleet
+          label: 目前收錄長篇
