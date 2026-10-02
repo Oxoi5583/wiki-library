@@ -1,3 +1,21 @@
 # 系列成員與不同順序在這裡集中維護，不另算成一件館藏。
-# 格式見 templates/series.yml 與 README.md；沒有系列時保持空對照表。
-{}
+# 格式見 templates/series.yml 與 README.md。
+
+toujou-genya:
+  title: 刀城言耶系列
+  original_title: 刀城言耶シリーズ
+  aliases: []
+  description: 三津田信三以怪奇幻想作家刀城言耶為核心的民俗本格／恐怖推理系列。這裡先記錄目前已收入館藏的代表作，不把未收錄作品之間的空缺誤作直接前後作。
+  sources:
+    - label: 講談社《首無の如き祟るもの》作品頁
+      url: https://www.kodansha.co.jp/book/products/0000205356
+  orders:
+    - id: library-members
+      title: 目前館藏成員
+      ordered: false
+      notes: 僅表示目前 Wiki Library 已收錄的刀城言耶系列作品，不是完整出版順序。
+      items:
+        - work: majimono-no-gotoki-tsukumono
+        - work: kubinashi-no-gotoki-tatarumono
+        - work: yamanma-no-gotoki-waraumono
+        - work: mizuchi-no-gotoki-shizumumono
