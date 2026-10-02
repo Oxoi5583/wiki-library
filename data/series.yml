@@ -24,7 +24,7 @@ sakka-sanbusaku:
   title: 作家三部作
   original_title: 作家三部作
   aliases: [三津田信三系列]
-  description: 以「三津田信三」本人作為敘事者之一、讓現實與虛構互相滲透的後設小說系列。第三編由《蛇棺葬》與《百蛇堂〈怪談作家の語る話〉》構成前後篇。
+  description: 以「三津田信三」本人作為敘事者之一、讓現實與虛構互相滲透的後設小說系列。名義上為三編，其中第三編拆成《蛇棺葬》與《百蛇堂》前後兩冊，因此館藏共有四件作品。
   sources:
     - label: 講談社《作者不詳　ミステリ作家の読む本（上）》
       url: https://www.kodansha.co.jp/book/products/0000205332
@@ -33,15 +33,13 @@ sakka-sanbusaku:
   orders:
     - id: release
       title: 出版順序
-      notes: 「作家三部作」實際包含四冊長篇；《蛇棺葬》與《百蛇堂》合為第三編的前後篇。
+      notes: 《蛇棺葬》與《百蛇堂》合為第三編的前後篇；閱讀《百蛇堂》前應先讀《蛇棺葬》。
       items:
         - work: ikan-horror-sakka-no-sumu-ie
           label: 第一編
-        - title: 作者不詳：推理作家的讀本
-          original_title: 作者不詳　ミステリ作家の読む本
+        - work: sakusha-fusho
           label: 第二編
         - work: jakansou
           label: 第三編・前編
-        - title: 百蛇堂：怪談作家述說的故事
-          original_title: 百蛇堂〈怪談作家の語る話〉
+        - work: hyakujado
           label: 第三編・後編
