@@ -31,7 +31,7 @@ sources:
     url: https://us.macmillan.com/books/9781250186461/adesolationcalledpeace/
   - label: 國家圖書館 ISBN 書目《名為和平的荒蕪》
     url: https://isbn.ncl.edu.tw/NEW_ISBNNet/main_DisplayRecord_Popup.php?KeepThis=true&Pact=view&Pkey=1110401%2A0060&TB_iframe=true&height=480&width=780
-related: []
+related: [a-memory-called-empire]
 ---
 
 ## 閱讀方向
