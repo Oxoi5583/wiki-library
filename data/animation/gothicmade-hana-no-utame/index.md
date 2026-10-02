@@ -1,8 +1,8 @@
 ---
 id: gothicmade-hana-no-utame
-title: 花の詩女 ゴティックメード
+title: 花之詩女 GOTHICMADE
 original_title: 花の詩女 ゴティックメード
-aliases: [花之詩女 GOTHICMADE, GOTHICMADE 花之詩女]
+aliases: [GOTHICMADE 花之詩女, 花之詩女]
 media: animation
 categories: [animation-film]
 tags: [機甲, 世界觀設計, 政治, 巡禮, 手繪動畫]

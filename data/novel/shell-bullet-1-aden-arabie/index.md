@@ -1,8 +1,8 @@
 ---
 id: shell-bullet-1-aden-arabie
-title: "シェルブリット I ADEN ARABIE"
+title: "Schell Bullet I: ADEN ARABIE"
 original_title: "シェルブリット I ADEN ARABIE"
-aliases: ["SHELL BULLET I", "Schell Bullet I"]
+aliases: ["SHELL BULLET I", "Schell Bullet I", "シェルブリット I ADEN ARABIE"]
 media: novel
 categories: [science-fiction-novel]
 tags: [太空歌劇, 生體宇宙船, 進化, 視覺小說, 世界觀設計]

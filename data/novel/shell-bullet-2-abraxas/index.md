@@ -1,8 +1,8 @@
 ---
 id: shell-bullet-2-abraxas
-title: "シェルブリット II ABRAXAS"
+title: "Schell Bullet II: ABRAXAS"
 original_title: "シェルブリット II ABRAXAS"
-aliases: ["SHELL BULLET II", "Schell Bullet II"]
+aliases: ["SHELL BULLET II", "Schell Bullet II", "シェルブリット II ABRAXAS"]
 media: novel
 categories: [science-fiction-novel]
 tags: [太空歌劇, 生體宇宙船, 進化, 視覺小說, 世界觀設計]

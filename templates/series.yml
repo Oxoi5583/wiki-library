@@ -1,5 +1,6 @@
 # 此檔只是格式範例，不會參與建置；使用時合併到 data/series.yml。
 # example-work 必須替換成館藏已有的 id；本範例的人名、書名與順序不代表真實作品。
+# 系列與未收錄作品的 title 也要先找中文名稱：可信中文名 → 英文名 → 原文名；不要自行直譯。
 example-cycle:
   title: 範例系列
   original_title: Example Cycle
