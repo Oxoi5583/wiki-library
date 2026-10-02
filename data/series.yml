@@ -191,3 +191,55 @@ teixcalaan:
           label: 第一部
         - work: a-desolation-called-peace
           label: 第二部
+
+space-odyssey:
+  title: 太空漫遊四部曲
+  original_title: Space Odyssey
+  aliases: [Space Odyssey Series, 太空漫遊系列]
+  description: 亞瑟・克拉克以黑色石板、HAL 9000 與人類宇宙進化為核心的四部科幻小說系列，從《2001太空漫遊》一路延伸至《3001太空漫遊》。
+  sources:
+    - label: Penguin Random House Space Odyssey Series
+      url: https://www.penguinrandomhouse.com/series/C1D/space-odyssey-series/
+    - label: 三民《2001太空漫遊》
+      url: https://www.sanmin.com.tw/product/index/006504872
+    - label: 天下文化《3001：太空漫遊》
+      url: https://bookzone.cwgv.com.tw/book/BSF001
+  orders:
+    - id: publication
+      title: 出版／閱讀順序
+      items:
+        - work: 2001-a-space-odyssey
+          label: 第一部
+        - work: 2010-odyssey-two
+          label: 第二部
+        - work: 2061-odyssey-three
+          label: 第三部
+        - work: 3001-the-final-odyssey
+          label: 第四部
+
+giants:
+  title: 巨人系列
+  original_title: Giants
+  aliases: [Giants Series, Giants Novels, Giant's Series]
+  description: 詹姆士・霍根以月球上的五萬年前人類遺骸為起點，逐步追索人類、甘尼米人、Minerva 與遠古太陽系歷史的硬科幻系列；最初三部形成一個完整段落，後來擴展為五部。
+  sources:
+    - label: Baen Books Giants Star Series
+      url: https://www.baen.com/allbooks/category/index/id/2081
+    - label: 城邦讀書花園「詹姆士・霍根」
+      url: https://www.cite.com.tw/publisher/authors/29267
+    - label: Baen Books《Mission to Minerva》
+      url: https://www.baen.com/mission-to-minerva.html
+  orders:
+    - id: publication
+      title: 出版／閱讀順序
+      items:
+        - work: inherit-the-stars
+          label: 第一部
+        - work: gentle-giants-of-ganymede
+          label: 第二部
+        - work: giants-star
+          label: 第三部
+        - work: entoverse
+          label: 第四部
+        - work: mission-to-minerva
+          label: 第五部
