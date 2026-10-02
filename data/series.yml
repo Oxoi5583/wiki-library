@@ -62,3 +62,52 @@ shell-bullet:
           label: I
         - work: shell-bullet-2-abraxas
           label: II
+
+seikai:
+  title: 星界系列
+  original_title: 星界シリーズ
+  aliases: [Seikai Series]
+  description: 森岡浩之以「亞維人類帝國」與其人工語言、星際政治、軍事制度為核心建構的太空歌劇系列；主線由《星界的紋章》與《星界的戰旗》構成，《星界的斷章》則收錄不同年代與人物的短篇。
+  sources:
+    - label: 早川書房《星界の紋章Ⅰ》
+      url: https://www.hayakawa-online.co.jp/shop/g/g0000020547/
+    - label: 早川書房《星界の断章Ⅰ》
+      url: https://www.hayakawa-online.co.jp/shop/g/g0000020802/
+  orders:
+    - id: main-story
+      title: 主線出版／閱讀順序
+      notes: 先讀《星界的紋章》三冊，再進入《星界的戰旗》。目前館藏先收錄至繁中尖端版已出版的《戰旗 IV》；後續日文卷保留位置。
+      items:
+        - work: seikai-monsho-1
+          label: 紋章 I
+        - work: seikai-monsho-2
+          label: 紋章 II
+        - work: seikai-monsho-3
+          label: 紋章 III
+        - work: seikai-senki-1
+          label: 戰旗 I
+        - work: seikai-senki-2
+          label: 戰旗 II
+        - work: seikai-senki-3
+          label: 戰旗 III
+        - work: seikai-senki-4
+          label: 戰旗 IV
+        - title: 星界の戦旗Ⅴ ―宿命の調べ―
+          original_title: 星界の戦旗Ⅴ ―宿命の調べ―
+          label: 戰旗 V・尚未收錄
+        - title: 星界の戦旗Ⅵ ―帝国の雷鳴―
+          original_title: 星界の戦旗Ⅵ ―帝国の雷鳴―
+          label: 戰旗 VI・尚未收錄
+    - id: fragments
+      title: 斷章短篇集
+      ordered: true
+      notes: 《星界的斷章》補寫亞維歷史、角色過去與主線未細述的事件，可在熟悉主線後穿插閱讀。
+      items:
+        - work: seikai-dansho-1
+          label: 斷章 I
+        - title: 星界の断章Ⅱ
+          original_title: 星界の断章Ⅱ
+          label: 斷章 II・尚未收錄
+        - title: 星界の断章Ⅲ
+          original_title: 星界の断章Ⅲ
+          label: 斷章 III・尚未收錄
