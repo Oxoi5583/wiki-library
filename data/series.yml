@@ -260,3 +260,23 @@ gunbuster:
           label: 第一部
         - work: diebuster
           label: 第二部
+
+project-itoh:
+  title: 伊藤計劃三部作
+  original_title: Project Itoh
+  aliases: [伊藤計劃系列, Project Itoh Trilogy]
+  description: 以伊藤計劃代表性長篇為核心的作品群，包括《虐殺器官》《和諧》以及由伊藤遺稿、設定與圓城塔續筆完成的《屍者的帝國》。三部作品並非同一世界觀的連續故事，因此只表示關聯作品群，不表示劇情順序。
+  sources:
+    - label: 伊藤計劃作品資料
+      url: https://zh.wikipedia.org/wiki/%E4%BC%8A%E8%97%A4%E8%A8%88%E5%8A%83
+    - label: 獨步文化《屍者的帝國》
+      url: https://www.cite.com.tw/book?id=42853
+  orders:
+    - id: core
+      title: 核心長篇
+      ordered: false
+      notes: 這三部沒有共同的故事時間線；此清單只表示華文出版與 Project Itoh 動畫企劃中常被並列的核心作品。
+      items:
+        - work: genocidal-organ
+        - work: harmony
+        - work: empire-of-corpses

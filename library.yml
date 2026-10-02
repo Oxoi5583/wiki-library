@@ -14,6 +14,7 @@ media:
   series: 影集
   music: 音樂
   play: 戲劇
+  poetry: 詩歌
   other: 其他
 
 # 作品分類：使用通行的文類、作品類型或學術領域。
@@ -26,6 +27,7 @@ categories:
   horror-novel: 恐怖小說
   fantasy-novel: 奇幻小說
   literary-fiction: 文學小說
+  epic-poetry: 史詩
   science-fiction-film: 科幻電影
   drama-film: 劇情電影
   documentary: 紀錄片
