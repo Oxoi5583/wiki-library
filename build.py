@@ -324,8 +324,18 @@ def build(source: Path, output: Path, config_path: Path = ROOT / "library.yml", 
     files = sorted(source.rglob("*"))
     if any(p.is_symlink() for p in files):
         raise ValueError("data 內不支援符號連結，請使用實際檔案")
-    entries = [load_entry(p, config) for p in files
-               if p.is_file() and p.suffix.lower() == ".md" and not any(x.startswith(".") for x in p.relative_to(source).parts)]
+    entries, entry_errors = [], []
+    for path in files:
+        if (not path.is_file() or path.suffix.lower() != ".md"
+                or any(part.startswith(".") for part in path.relative_to(source).parts)):
+            continue
+        try:
+            entries.append(load_entry(path, config))
+        except ValueError as exc:
+            entry_errors.append(str(exc))
+    if entry_errors:
+        details = "\n".join(f"- {error}" for error in entry_errors)
+        raise ValueError(f"館藏資料驗證失敗（共 {len(entry_errors)} 件）：\n{details}")
     entries.sort(key=lambda e: (-date.fromisoformat(e["meta"]["added"]).toordinal(), e["meta"]["id"]))
     by_id = {}
     directories = set()

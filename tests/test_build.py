@@ -112,6 +112,19 @@ class BuildTests(unittest.TestCase):
             build(self.source, self.output)
         self.assertEqual((self.output / "index.html").read_bytes(), before)
 
+    def test_multiple_entry_errors_are_reported_together(self):
+        self.entry("bad-date", added="2026-02-30")
+        self.entry("bad-media", media="typo")
+        with self.assertRaises(ValueError) as context:
+            build(self.source, self.output)
+        message = str(context.exception)
+        self.assertIn("共 2 件", message)
+        self.assertIn("bad-date", message)
+        self.assertIn("added", message)
+        self.assertIn("bad-media", message)
+        self.assertIn("未知媒體", message)
+        self.assertFalse(self.output.exists())
+
     def test_unquoted_colon_in_plain_scalar_is_repaired(self):
         path = self.entry()
         text = path.read_text(encoding="utf-8")
