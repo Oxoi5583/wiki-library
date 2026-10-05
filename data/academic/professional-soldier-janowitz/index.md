@@ -31,5 +31,5 @@ sources:
     url: https://search.worldcat.org/title/The-professional-soldier-%3A-a-social-and-political-portrait/oclc/2360182
   - label: "政大論文所列繁中版書目"
     url: https://thesis.lib.nccu.edu.tw/thesis/detail/b3ab0db22ec12f48c79ffc3440f1a116/?seq=7
-related: ["soldier-and-state"]
+related: ["soldier-and-state", "supreme-command-cohen"]
 ---
