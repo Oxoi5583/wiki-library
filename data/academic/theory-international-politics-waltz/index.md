@@ -1,8 +1,8 @@
 ---
 id: theory-international-politics-waltz
-title: "Theory of International Politics"
+title: "國際政治理論"
 original_title: "Theory of International Politics"
-aliases: []
+aliases: ["Theory of International Politics"]
 media: academic
 categories: ["social-science", "philosophy"]
 tags: ["國際關係", "結構現實主義", "新現實主義", "無政府狀態", "權力分配", "國際體系"]
@@ -16,9 +16,19 @@ features: "新現實主義的核心文本。對寫國際政治很實用，因為
 status: curious
 added: 2026-10-05
 cover: ""
-editions: []
+editions:
+  - title: "國際政治理論"
+    language: "簡體中文"
+    format: "紙本"
+    translators: ["信強"]
+    publisher: "上海人民出版社"
+    year: 2003
+    isbn: "7208047936"
+    url: https://opac.uibe.edu.cn/opac/book/5418eeaf37f8c90218a7c79b92329e06
 sources:
   - label: "WorldCat《Theory of International Politics》"
     url: https://search.worldcat.org/title/Theory-of-international-politics/oclc/4667316
-related: ["politics-among-nations", "tragedy-great-power-politics", "social-theory-international-politics"]
+  - label: "對外經濟貿易大學圖書館《國際政治理論》"
+    url: https://opac.uibe.edu.cn/opac/book/5418eeaf37f8c90218a7c79b92329e06
+related: ["politics-among-nations", "tragedy-great-power-politics", "social-theory-international-politics", "causes-war-van-evera"]
 ---
