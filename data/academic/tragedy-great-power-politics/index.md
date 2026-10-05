@@ -29,5 +29,5 @@ editions:
 sources:
   - label: "博客來《大國政治的悲劇》"
     url: https://www.books.com.tw/products/0010903918
-related: ["politics-among-nations", "theory-international-politics-waltz", "social-theory-international-politics"]
+related: ["politics-among-nations", "theory-international-politics-waltz", "social-theory-international-politics", "causes-war-van-evera"]
 ---
