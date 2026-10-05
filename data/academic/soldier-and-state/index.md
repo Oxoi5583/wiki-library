@@ -31,5 +31,5 @@ sources:
     url: https://www.jstor.org/stable/j.ctvjf9wx3
   - label: "政大論文所列繁中版書目"
     url: https://thesis.lib.nccu.edu.tw/thesis/detail/b3ab0db22ec12f48c79ffc3440f1a116/?seq=7
-related: ["professional-soldier-janowitz"]
+related: ["professional-soldier-janowitz", "supreme-command-cohen"]
 ---
