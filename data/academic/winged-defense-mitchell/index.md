@@ -9,7 +9,7 @@ tags: ["軍事思想", "空權", "空軍戰略", "海空作戰", "國防政策",
 year: 1925
 original_language: "英語"
 creators:
-  - name: "William "Billy" Mitchell"
+  - name: 'William "Billy" Mitchell'
     role: "作者"
 summary: "Mitchell 從第一次世界大戰與戰後航空發展出發，主張空權不只是一支軍種的戰力，而與國家的航空工業、民航、技術能力與國防體系相互連結。"
 features: "作品兼具軍事論述與政策倡議，尤其強調空軍獨立、遠程航空與飛機對海上力量的威脅，是美國早期空權思想的重要代表。"

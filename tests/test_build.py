@@ -156,7 +156,9 @@ class BuildTests(unittest.TestCase):
         path.write_text(text, encoding="utf-8")
         self.assertEqual(build(self.source, self.output), 1)
         detail = (self.output / "works/test-work/index.html").read_text(encoding="utf-8")
-        self.assertIn("版本待補", detail)
+        self.assertNotIn('class="edition"', detail)
+        home = (self.output / "index.html").read_text(encoding="utf-8")
+        self.assertIn("版本待補", home)
 
     def test_series_numeric_labels_are_normalized_to_text(self):
         self.entry("first")
@@ -179,7 +181,7 @@ class BuildTests(unittest.TestCase):
         detail = (self.output / "works/test-work/index.html").read_text(encoding="utf-8")
         self.assertIn(">1984<", detail)
         self.assertIn("42", detail)
-        self.assertIn("# 2026", detail)
+        self.assertIn(f'href="../../{tag_path("2026").as_posix()}">2026</a>', detail)
 
     def test_missing_link_fails_before_writing(self):
         path = self.entry()

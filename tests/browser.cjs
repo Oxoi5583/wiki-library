@@ -9,7 +9,9 @@ const { chromium } = require(process.env.WIKI_PLAYWRIGHT || "playwright");
 
 (async () => {
   const browser = await chromium.launch({
-    channel: process.env.WIKI_BROWSER || "msedge",
+    ...(process.env.WIKI_BROWSER_EXECUTABLE
+      ? { executablePath: process.env.WIKI_BROWSER_EXECUTABLE }
+      : { channel: process.env.WIKI_BROWSER || "msedge" }),
     headless: true,
   });
   const context = await browser.newContext({
@@ -21,13 +23,29 @@ const { chromium } = require(process.env.WIKI_PLAYWRIGHT || "playwright");
   page.on("pageerror", (error) => errors.push(error.message));
   const root = path.resolve(__dirname, "..");
   const fixtureRoot = fs.mkdtempSync(path.join(os.tmpdir(), "wiki-library-series-qa-"));
-  const home = pathToFileURL(path.join(root, "site/index.html")).href;
+  const sampleSource = path.join(fixtureRoot, "samples");
+  const sampleSite = path.join(fixtureRoot, "sample-site");
+  const home = pathToFileURL(path.join(sampleSite, "index.html")).href;
   const visible = () => page.locator(".catalogue .work-row:visible").count();
   const search = async (value) => {
     await page.locator('input[name="q"]').fill(value);
     await page.waitForTimeout(180);
   };
+  const options = (name) =>
+    page.locator(`select[name="${name}"] option`).evaluateAll((items) =>
+      items.map((option) => option.value),
+    );
   try {
+    // Keep the six sample works independent of additions to the real library.
+    for (const relative of [
+      "novel/solaris", "film/stalker", "animation/ghost-in-the-shell",
+      "game/outer-wilds", "academic/imagined-communities", "comic/pluto",
+    ]) {
+      fs.cpSync(path.join(root, "data", relative), path.join(sampleSource, relative), { recursive: true });
+    }
+    execFileSync("python", ["build.py", "--source", sampleSource, "--output", sampleSite], {
+      cwd: root, env: { ...process.env, PYTHONUTF8: "1" }, stdio: "pipe",
+    });
     await page.goto(home);
     assert.equal(await visible(), 6);
     assert.equal(await page.locator(".library-hero, .work-card").count(), 0);
@@ -58,7 +76,12 @@ const { chromium } = require(process.env.WIKI_PLAYWRIGHT || "playwright");
       .locator('select[name="category"]')
       .selectOption("social-science");
     assert.equal(await visible(), 1);
+    assert.deepEqual(await options("media"), ["", "academic"]);
+    assert.deepEqual(await options("tag"), ["", "政治學", "歷史學", "民族主義", "社會學"]);
     await page.locator('select[name="tag"]').selectOption("政治學");
+    assert.equal(await visible(), 1);
+    assert.equal((await options("tag")).includes("歷史學"), true);
+    await page.locator('select[name="tag"]').selectOption("歷史學");
     assert.equal(await visible(), 1);
     await page.getByRole("button", { name: "清除篩選" }).click();
     await page.waitForTimeout(50);
@@ -86,17 +109,37 @@ const { chromium } = require(process.env.WIKI_PLAYWRIGHT || "playwright");
     assert.equal(await visible(), 6);
     await page.locator('select[name="media"]').selectOption("game");
     assert.equal(await visible(), 1);
+    assert.deepEqual(await options("category"), ["", "adventure-game"]);
+    assert.equal((await options("tag")).includes("政治學"), false);
     await page
       .locator('select[name="category"]')
-      .selectOption("science-fiction-novel");
-    assert.equal(await visible(), 0);
+      .selectOption("adventure-game");
+    assert.equal(await visible(), 1);
     await page.getByRole("button", { name: "清除篩選" }).click();
     await page.waitForTimeout(50);
     await page.locator('select[name="tag"]').selectOption("人工智慧");
     assert.equal(await visible(), 2);
+    assert.deepEqual(await options("media"), ["", "animation", "comic"]);
     assert.match(page.url(), /tag=/);
     await page.reload();
     assert.equal(await visible(), 2);
+    // popstate must restore values removed from the previous option list.
+    await page.evaluate(() => {
+      history.pushState(null, "", "?media=game");
+      dispatchEvent(new PopStateEvent("popstate"));
+    });
+    assert.equal(await visible(), 1);
+    assert.equal(await page.locator('select[name="media"]').inputValue(), "game");
+    await page.goBack();
+    assert.equal(await visible(), 2);
+    assert.equal(await page.locator('select[name="tag"]').inputValue(), "人工智慧");
+    await search("索拉力星");
+    assert.equal(await visible(), 1);
+    assert.equal(await page.locator('select[name="tag"]').inputValue(), "");
+    assert.doesNotMatch(page.url(), /tag=/);
+    assert.deepEqual(await options("media"), ["", "novel"]);
+    const searchTags = await options("tag");
+    assert.equal(searchTags.length, new Set(searchTags).size);
     await page.getByRole("button", { name: "清除篩選" }).click();
     await page.waitForTimeout(50);
     await page.locator('select[name="sort"]').selectOption("year");
@@ -115,7 +158,7 @@ const { chromium } = require(process.env.WIKI_PLAYWRIGHT || "playwright");
     });
     await page.getByRole("button", { name: "切換至淺色模式" }).click();
     await page.goto(
-      pathToFileURL(path.join(root, "site/works/solaris/index.html")).href,
+      pathToFileURL(path.join(sampleSite, "works/solaris/index.html")).href,
     );
     await page
       .getByRole("heading", { name: "內容簡介", exact: true })
@@ -139,7 +182,7 @@ const { chromium } = require(process.env.WIKI_PLAYWRIGHT || "playwright");
     await page.locator(".prose a").click();
     assert.match(page.url(), /works\/stalker\/index.html/);
     await page.goto(
-      pathToFileURL(path.join(root, "site/media/game/index.html")).href,
+      pathToFileURL(path.join(sampleSite, "media/game/index.html")).href,
     );
     assert.equal(await visible(), 1);
     await search("Solaris");
@@ -160,7 +203,7 @@ const { chromium } = require(process.env.WIKI_PLAYWRIGHT || "playwright");
     await page.locator(".shelf-nav > summary").click();
     assert.equal(await page.locator(".shelf-nav").getAttribute("open"), "");
     await page.goto(
-      pathToFileURL(path.join(root, "site/works/solaris/index.html")).href,
+      pathToFileURL(path.join(sampleSite, "works/solaris/index.html")).href,
     );
     assert.equal(
       await page.evaluate(
@@ -217,8 +260,12 @@ finally:
     assert.equal(await visible(), 2);
     await search("系列別名");
     assert.equal(await visible(), 2);
+    assert.deepEqual(await options("media"), ["", "novel"]);
+    await search("");
+    await page.locator('select[name="series"]').selectOption("");
     await page.locator('select[name="media"]').selectOption("film");
-    assert.equal(await visible(), 0);
+    assert.equal(await visible(), 1);
+    assert.deepEqual(await options("series"), [""]);
     await page.getByRole("button", { name: "清除篩選" }).click();
     await page.waitForTimeout(50);
     assert.equal(await visible(), 3);

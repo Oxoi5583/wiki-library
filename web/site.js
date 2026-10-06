@@ -71,7 +71,56 @@
     sort: "added",
   };
   const collator = new Intl.Collator("zh-Hant", { numeric: true });
+  const filters = ["media", "category", "series", "tag", "status"];
+  const filterOptions = Object.fromEntries(
+    filters.map((name) => [name, [...controls[name].options]]),
+  );
+  const valuesFor = (entry, name) => {
+    if (name === "category") return entry.categories;
+    if (name === "tag") return entry.tags;
+    if (name === "series") return entry.series;
+    return [entry[name]];
+  };
+  const matchesFilters = (entry, excluded = "") =>
+    filters.every(
+      (name) =>
+        name === excluded ||
+        !controls[name].value ||
+        valuesFor(entry, name).includes(controls[name].value),
+    );
+  const availableValues = (items, name) =>
+    new Set(
+      items
+        .filter((entry) => matchesFilters(entry, name))
+        .flatMap((entry) => valuesFor(entry, name)),
+    );
+  const updateFilterOptions = (items) => {
+    // Clear incompatible selections before rebuilding options. Removing a
+    // constraint can only expand the available values for the other filters.
+    const unavailable = filters.filter((name) => {
+      const value = controls[name].value;
+      return value && !availableValues(items, name).has(value);
+    });
+    unavailable.forEach((name) => {
+      controls[name].value = "";
+    });
+    filters.forEach((name) => {
+      const control = controls[name];
+      const value = control.value;
+      const available = availableValues(items, name);
+      const options = filterOptions[name].filter(
+        (option) => !option.value || available.has(option.value),
+      );
+      control.replaceChildren(...options);
+      control.value = value;
+    });
+    return unavailable.length !== 0;
+  };
   const readUrl = () => {
+    // A previous render may have removed options needed by the restored URL.
+    filters.forEach((name) => {
+      controls[name].replaceChildren(...filterOptions[name]);
+    });
     const params = new URLSearchParams(location.search);
     fields.forEach((name) => {
       const control = controls[name];
@@ -98,16 +147,11 @@
   };
   const render = (save = true) => {
     const terms = normalize(controls.q.value).split(" ").filter(Boolean);
-    const visible = entries.filter(
-      (entry) =>
-        terms.every((term) => entry.search.includes(term)) &&
-        (!controls.media.value || entry.media === controls.media.value) &&
-        (!controls.category.value ||
-          entry.categories.includes(controls.category.value)) &&
-        (!controls.series.value || entry.series.includes(controls.series.value)) &&
-        (!controls.tag.value || entry.tags.includes(controls.tag.value)) &&
-        (!controls.status.value || entry.status === controls.status.value),
+    const searched = entries.filter((entry) =>
+      terms.every((term) => entry.search.includes(term)),
     );
+    const filtersCleared = updateFilterOptions(searched);
+    const visible = searched.filter((entry) => matchesFilters(entry));
     const order = controls.sort.value;
     visible.sort((a, b) => {
       if (order === "title") return collator.compare(a.title, b.title);
@@ -129,7 +173,7 @@
     });
     count.textContent = visible.length;
     empty.hidden = visible.length !== 0;
-    if (save) writeUrl();
+    if (save || filtersCleared) writeUrl();
   };
   let timer;
   form.addEventListener("input", (event) => {

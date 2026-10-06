@@ -44,6 +44,7 @@ python -m http.server 8000 --directory site
 - 首頁直接顯示可搜尋的館藏目錄，採逐行列表，取消大標語與封面卡片。
 - 每列分為作品／原文標題、媒體／作品分類、作者／主創、內容簡介／作品特色、版本／狀態五欄；標籤、年份、譯者與版本語言也直接顯示。
 - 全部館藏：搜尋與媒體、作品分類、標籤、探索狀態的交叉篩選；依收錄日期、名稱或原作年份排序。
+- 篩選選項會互相連動：媒體、作品分類、系列、標籤與探索狀態只列出符合搜尋及其他已選條件的值；計算一個選單時忽略該選單本身，保留切換選項的空間。不再適用的已選值會清除並同步網址，清除篩選後恢復目前目錄的完整選項。
 - 媒體、作品分類、標籤頁：各自有實際 HTML 頁面，頁內搜尋只比對目前列表。
 - 館藏資料：中文譯名、原文標題、其他譯名、主創及角色、內容簡介、作品特色、版本／譯者資料、Markdown 筆記與資料來源。
 - 相關作品：優先顯示 `related` 指定的作品，再依共同標籤與分類補上，最多三件，同樣採逐行列表。
@@ -261,7 +262,7 @@ python -m unittest discover -s tests -v
 
 測試涵蓋空館藏、中英標題與搜尋資料、圖片與 Markdown 連結、範例網站的本機連結／錨點、無效 metadata、重複 id、未知媒體及輸出檔案保護。
 
-可選的瀏覽器測試需要 Node.js 和 Playwright；一般建置不需要。自行安裝 `playwright` 後執行 `node tests/browser.cjs`，預設使用本機 Microsoft Edge。可用 `WIKI_BROWSER=chrome` 改用 Chrome，或把 `WIKI_PLAYWRIGHT` 設為已安裝 Playwright 套件的絕對路徑。測試使用 `file://`，驗證搜尋、組合篩選、網址狀態、深淺色、手機版與無 JavaScript 導覽，並輸出已被 Git 忽略的 `preview-*.png` 截圖。
+可選的瀏覽器測試需要 Node.js 和 Playwright；一般建置不需要。自行安裝 `playwright` 後執行 `node tests/browser.cjs`，預設使用本機 Microsoft Edge。可用 `WIKI_BROWSER=chrome` 改用 Chrome，以 `WIKI_BROWSER_EXECUTABLE` 指定瀏覽器執行檔，或把 `WIKI_PLAYWRIGHT` 設為已安裝 Playwright 套件的絕對路徑。測試會將六件範例館藏複製到暫存目錄建置，避免真實館藏的新增影響預期結果；使用 `file://` 驗證搜尋、選項連動、組合篩選、網址狀態、深淺色、手機版與無 JavaScript 導覽，並輸出已被 Git 忽略的 `preview-*.png` 截圖。
 
 
 ### Build 容錯
